@@ -22,15 +22,23 @@ int searchNumber(int arr[], int numberToFind) {
 }
 
 int main() {
-  int arr[10] = {2, 4, 5, 8, 12, 14, 15, 18, 19, 44};
-  int numberToFind, index;
+  int arr[10];
+  int numberToFind, foundNumberindex, i;
 
-  printf("Please enter the number to find in array [2, 4, 5, 8, 12, 14, 15, 18, 19, 44].\n");
+  printf("Please enter 10 numbers.\n");
+  for(i=0; i<10; i++) {
+    scanf("%d", &arr[i]);
+  };
+  printf("The number you have entered are...\n");
+  for(i=0; i<10; i++) {
+    printf("%d ,", arr[i]);
+  };
+  printf("\nPlease enter the number to be search ");
   scanf("%d", &numberToFind);
 
-  index = searchNumber(arr, numberToFind);
-  if(index > -1) {
-    printf("Number %d is found at index %d in array.\n", numberToFind, index);
+  foundNumberindex = searchNumber(arr, numberToFind);
+  if(foundNumberindex > -1) {
+    printf("Number %d is found at index %d in array.\n", numberToFind, foundNumberindex);
   } else {
     printf("Number %d is not found in array.\n", numberToFind);
   }
